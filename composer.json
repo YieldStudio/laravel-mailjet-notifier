@@ -1,12 +1,17 @@
 {
-    "name": "yieldstudio/{{identifier}}",
-    "description": "{{description}}",
+    "name": "yieldstudio/laravel-mailjet-notifier",
+    "description": "Easily send Mailjet transactional email and sms with Laravel notifier.",
     "type": "plugin",
     "keywords": [
         "yieldstudio",
-        "laravel"
+        "laravel",
+        "notifier",
+        "notification",
+        "mailjet",
+        "email",
+        "sms"
     ],
-    "homepage": "https://github.com/YieldStudio/{{identifier}}",
+    "homepage": "https://github.com/YieldStudio/laravel-mailjet-notifier",
     "license": "MIT",
     "authors": [
         {
@@ -28,12 +33,12 @@
     },
     "autoload": {
         "psr-4": {
-            "YieldStudio\\{{namespace}}\\": "src"
+            "YieldStudio\\LaravelMailjetNotifier\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "YieldStudio\\{{namespace}}\\Test\\": "tests"
+            "YieldStudio\\LaravelMailjetNotifier\\Test\\": "tests"
         }
     },
     "scripts": {

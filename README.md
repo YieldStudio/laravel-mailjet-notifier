@@ -1,27 +1,14 @@
-===========
+# laravel-mailjet-notifier
 
-Fork this repository and replace these variables:
+Easily send Mailjet transactional email and sms with Laravel notifier.
 
-- {{identifier}}
-- {{name}}
-- {{description}}
-- {{namespace}}
-
-Don't forget to update composer.json authors and keywords
-
-===========
-
-# {{identifier}}
-
-{{description}}
-
-[![Latest Version](https://img.shields.io/github/release/yieldstudio/{{identifier}}?style=flat-square)](https://github.com/yieldstudio/{{identifier}}/releases)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/yieldstudio/{{identifier}}/tests?style=flat-square)](https://github.com/yieldstudio/{{identifier}}/actions/workflows/tests.yml)
-[![Total Downloads](https://img.shields.io/packagist/dt/yieldstudio/{{identifier}}?style=flat-square)](https://packagist.org/packages/yieldstudio/{{identifier}})
+[![Latest Version](https://img.shields.io/github/release/yieldstudio/laravel-mailjet-notifier?style=flat-square)](https://github.com/yieldstudio/laravel-mailjet-notifier/releases)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/yieldstudio/laravel-mailjet-notifier/tests?style=flat-square)](https://github.com/yieldstudio/laravel-mailjet-notifier/actions/workflows/tests.yml)
+[![Total Downloads](https://img.shields.io/packagist/dt/yieldstudio/laravel-mailjet-notifier?style=flat-square)](https://packagist.org/packages/yieldstudio/laravel-mailjet-notifier)
 
 ## Installation
 
-	composer require yieldstudio/{{identifier}}
+	composer require yieldstudio/laravel-mailjet-notifier
 
 ## Usage
 

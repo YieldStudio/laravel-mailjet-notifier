@@ -13,7 +13,7 @@ class MailjetNotifierServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__.'/../config' => config_path(),
-            ], 'mailjet-notifier-config');
+            ], 'config');
         }
     }
 

@@ -22,14 +22,17 @@
         }
     ],
     "require": {
-        "php" : "^8.0",
-        "illuminate/support": "^9"
+        "php": "^8.0",
+        "illuminate/support": "^9",
+        "illuminate/database": "^9",
+        "mailjet/mailjet-apiv3-php": "^1.5"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.1",
+        "ciareis/bypass": "^1.0",
+        "friendsofphp/php-cs-fixer": "^3.8",
         "orchestra/testbench": "7.*",
         "pestphp/pest": "^1.21",
-        "friendsofphp/php-cs-fixer": "^3.8"
+        "phpunit/phpunit": "^9.1"
     },
     "autoload": {
         "psr-4": {
@@ -38,7 +41,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "YieldStudio\\LaravelMailjetNotifier\\Test\\": "tests"
+            "YieldStudio\\LaravelMailjetNotifier\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -47,6 +50,13 @@
         "post-autoload-dump": [
             "@php ./vendor/bin/testbench package:discover --ansi"
         ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "YieldStudio\\LaravelMailjetNotifier\\MailjetNotifierServiceProvider"
+            ]
+        }
     },
     "config": {
         "sort-packages": true,

@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'key' => env('MAILJET_APIKEY'),
-    'secret' => env('MAILJET_APISECRET'),
+    'key' => env('MAILJET_APIKEY', ''),
+    'secret' => env('MAILJET_APISECRET', ''),
     'smsToken' => env('MAILJET_SMSTOKEN'),
     'emailFrom' => [
         'Email' => env('MAIL_FROM_ADDRESS'),

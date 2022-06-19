@@ -27,7 +27,7 @@ class MailjetNotifierServiceProvider extends ServiceProvider
             $smsToken = config('mailjet.smsToken');
             $emailFrom = config('mailjet.emailFrom');
             $smsFrom = config('mailjet.smsFrom');
-            $dry = config('mailjet.dry', false);
+            $dry = (bool) config('mailjet.dry', false);
             $options = config('mailjet.options', []);
 
             $instance = new MailjetService($key, $secret, $dry, $options);

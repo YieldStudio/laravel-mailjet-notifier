@@ -36,6 +36,7 @@ class MailjetService
 
         $this->client = new Client($key, $secret, ! $dry, $options);
         $this->options = $options;
+        $this->dry = $dry;
     }
 
     /**

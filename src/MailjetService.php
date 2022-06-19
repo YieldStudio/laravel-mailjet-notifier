@@ -18,6 +18,8 @@ class MailjetService
 
     protected ?string $smsToken = null;
 
+    protected bool $dry = false;
+
     protected array $options;
 
     public function __construct(string $key, string $secret, bool $dry = false, array $options = [])
@@ -43,11 +45,11 @@ class MailjetService
      * @param array $args Request arguments
      * @param array $options
      *
-     * @return Response
+     * @return Response|null
      *
      * @throws MailjetException
      */
-    public function sendEmail(MailjetEmailMessage $message, array $args = [], array $options = []): Response
+    public function sendEmail(MailjetEmailMessage $message, array $args = [], array $options = []): ?Response
     {
         if (! $message->from) {
             $message->from($this->emailFrom);
@@ -55,7 +57,7 @@ class MailjetService
 
         $response = $this->client->post(Resources::$Email, array_merge_recursive(['body' => $message->toArray()], $args), $options);
 
-        if (! $response->success()) {
+        if (! $this->dry && ! $response->success()) {
             throw new MailjetException(0, 'MailjetService:sendEmail() failed', $response);
         }
 
@@ -86,7 +88,7 @@ class MailjetService
 
         $response = $client->post(Resources::$SmsSend, array_merge_recursive(['body' => $message->toArray()], $args), $options);
 
-        if (! $response->success()) {
+        if (! $this->dry && ! $response->success()) {
             throw new MailjetException(0, 'MailjetService:sendSms() failed', $response);
         }
 
@@ -108,7 +110,7 @@ class MailjetService
     {
         $response = $this->client->post($resource, $args, $options);
 
-        if (! $response->success()) {
+        if (! $this->dry && ! $response->success()) {
             throw new MailjetException(0, 'MailjetService:post() failed', $response);
         }
 
@@ -130,7 +132,7 @@ class MailjetService
     {
         $response = $this->client->get($resource, $args, $options);
 
-        if (! $response->success()) {
+        if (! $this->dry && ! $response->success()) {
             throw new MailjetException(0, 'MailjetService:get() failed', $response);
         }
 
@@ -152,7 +154,7 @@ class MailjetService
     {
         $response = $this->client->put($resource, $args, $options);
 
-        if (! $response->success()) {
+        if (! $this->dry && ! $response->success()) {
             throw new MailjetException(0, 'MailjetService:put() failed', $response);
         }
 
@@ -174,7 +176,7 @@ class MailjetService
     {
         $response = $this->client->delete($resource, $args, $options);
 
-        if (! $response->success()) {
+        if (! $this->dry && ! $response->success()) {
             throw new MailjetException(0, 'MailjetService:delete() failed', $response);
         }
 

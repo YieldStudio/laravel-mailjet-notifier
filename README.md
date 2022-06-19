@@ -51,7 +51,7 @@ use YieldStudio\LaravelMailjetNotifier\MailjetEmailChannel;
 
 class OrderConfirmation extends Notification
 {
-    public function channels(): array
+    public function via(): array
     {
         return [MailjetEmailChannel::class];
     }

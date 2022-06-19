@@ -30,18 +30,25 @@ class MailjetNotifierServiceProvider extends ServiceProvider
             $options = config('mailjet.options', []);
 
             $instance = new MailjetService($key, $secret, $options);
-            $instance->setEmailFrom($emailFrom);
-            $instance->setSmsFrom($smsFrom);
-            $instance->setSmsToken($smsToken);
+
+            if (filled($emailFrom)) {
+                $instance->setEmailFrom($emailFrom);
+            }
+
+            if (filled($smsFrom)){
+                $instance->setSmsFrom($smsFrom);
+            }
+
+            if (filled($smsToken)) {
+                $instance->setSmsToken($smsToken);
+            }
 
             return $instance;
         });
-
-        $this->app->alias('mailjet', MailjetService::class);
     }
 
     public function provides(): array
     {
-        return ['mailjet'];
+        return [MailjetService::class];
     }
 }

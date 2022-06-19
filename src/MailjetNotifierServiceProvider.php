@@ -35,7 +35,7 @@ class MailjetNotifierServiceProvider extends ServiceProvider
                 $instance->setEmailFrom($emailFrom);
             }
 
-            if (filled($smsFrom)){
+            if (filled($smsFrom)) {
                 $instance->setSmsFrom($smsFrom);
             }
 

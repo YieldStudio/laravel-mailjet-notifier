@@ -20,7 +20,7 @@ class MailjetService
 
     protected array $options;
 
-    public function __construct(string $key, string $secret, array $options = [])
+    public function __construct(string $key, string $secret, bool $dry = false, array $options = [])
     {
         if (array_key_exists('emailFrom', $options)) {
             $this->emailFrom = $options['emailFrom'];
@@ -32,7 +32,7 @@ class MailjetService
             unset($options['smsFrom']);
         }
 
-        $this->client = new Client($key, $secret, true, $options);
+        $this->client = new Client($key, $secret, ! $dry, $options);
         $this->options = $options;
     }
 

@@ -22,20 +22,21 @@ class MailjetNotifierServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__ . '/../config/mailjet.php', 'mailjet');
 
         $this->app->bind(MailjetService::class, function () {
-            $key = config('mailjet.key');
-            $secret = config('mailjet.secret');
+            $key = config('mailjet.key', '');
+            $secret = config('mailjet.secret', '');
             $smsToken = config('mailjet.smsToken');
             $emailFrom = config('mailjet.emailFrom');
             $smsFrom = config('mailjet.smsFrom');
+            $dry = config('mailjet.dry', false);
             $options = config('mailjet.options', []);
 
-            $instance = new MailjetService($key, $secret, $options);
+            $instance = new MailjetService($key, $secret, $dry, $options);
 
             if (filled($emailFrom)) {
                 $instance->setEmailFrom($emailFrom);
             }
 
-            if (filled($smsFrom)){
+            if (filled($smsFrom)) {
                 $instance->setSmsFrom($smsFrom);
             }
 

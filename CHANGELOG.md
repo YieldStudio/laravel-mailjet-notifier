@@ -4,6 +4,12 @@ All notable changes to `laravel-mailjet-notifier` will be documented in this fil
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+## 0.0.3 - 2022-06-19
+
+**Full Changelog**: https://github.com/YieldStudio/laravel-mailjet-notifier/compare/0.0.1...0.0.3
+
+- Add dry mode
+
 ## 0.0.2 - 2022-06-19
 
 **Full Changelog**: https://github.com/YieldStudio/laravel-mailjet-notifier/compare/0.0.1...0.0.2

@@ -14,7 +14,7 @@ it('returns a Response instance when the email is sent correctly', function () {
         Route::post('/v3/send', ['success' => true]),
     );
 
-    $mailjetService = new MailjetService('key', 'secret', [
+    $mailjetService = new MailjetService('key', 'secret', false, [
         'emailFrom' => [
             'Name' => 'John Doe',
             'Email' => 'john@doe.fr',
@@ -35,7 +35,7 @@ it('returns a MailjetException when sending email fails', function () {
         Route::post('/v3/send', ['success' => false], 400),
     );
 
-    $mailjetService = new MailjetService('key', 'secret', [
+    $mailjetService = new MailjetService('key', 'secret', false, [
         'emailFrom' => [
             'Name' => 'John Doe',
             'Email' => 'john@doe.fr',
@@ -54,7 +54,7 @@ it('returns a Response instance when the sms is sent correctly', function () {
         Route::post('/v4/sms-send', ['success' => true]),
     );
 
-    $mailjetService = new MailjetService('key', 'secret', [
+    $mailjetService = new MailjetService('key', 'secret', false, [
         'smsFrom' => 'SENDER',
         'secured' => false,
         'url' => str_replace('http://', '', $bypass->getBaseUrl()),
@@ -74,7 +74,7 @@ it('returns a MailjetException when sending sms fails', function () {
         Route::post('/v4/sms-send', ['success' => false], 400),
     );
 
-    $mailjetService = new MailjetService('key', 'secret', [
+    $mailjetService = new MailjetService('key', 'secret', false, [
         'smsFrom' => 'SENDER',
         'secured' => false,
         'url' => str_replace('http://', '', $bypass->getBaseUrl()),

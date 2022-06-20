@@ -25,11 +25,14 @@ MAILJET_SMSTOKEN=
 MAIL_FROM_ADDRESS=
 MAIL_FROM_NAME=
 MAILJET_SMS_SENDER=
+MAILJET_DRY=true|false
 ```
 
 Make sure that MAIL_FROM_ADDRESS is an authenticated email on Mailjet, otherwise your emails will not be sent by the Mailjet API.
 
 MAILJET_SMS_SENDER should be between 3 and 11 characters in length, only alphanumeric characters are allowed.
+
+When the dry mode is enabled, Mailjet API isn't called.
 
 You can publish the configuration file with:
 

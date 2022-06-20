@@ -4,6 +4,12 @@ All notable changes to `laravel-mailjet-notifier` will be documented in this fil
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+## 0.0.4 - 2022-06-20
+
+**Full Changelog**: https://github.com/YieldStudio/laravel-mailjet-notifier/compare/0.0.3...0.0.4
+
+- Add cc and bcc to MailjetEmailMessage
+
 ## 0.0.3 - 2022-06-19
 
 **Full Changelog**: https://github.com/YieldStudio/laravel-mailjet-notifier/compare/0.0.2...0.0.3

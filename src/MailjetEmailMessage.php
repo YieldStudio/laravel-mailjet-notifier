@@ -16,6 +16,10 @@ class MailjetEmailMessage
 
     public array $to = [];
 
+    public array $cc = [];
+
+    public array $bcc = [];
+
     public ?array $from = null;
 
     public bool $templateLanguage = true;
@@ -42,6 +46,34 @@ class MailjetEmailMessage
             $this->to = $name;
         } else {
             $this->to[] = [
+                'Name' => $name,
+                'Email' => $email,
+            ];
+        }
+
+        return $this;
+    }
+
+    public function cc($name, $email = null): static
+    {
+        if (is_array($name)) {
+            $this->cc = $name;
+        } else {
+            $this->cc[] = [
+                'Name' => $name,
+                'Email' => $email,
+            ];
+        }
+
+        return $this;
+    }
+
+    public function bcc($name, $email = null): static
+    {
+        if (is_array($name)) {
+            $this->bcc = $name;
+        } else {
+            $this->bcc[] = [
                 'Name' => $name,
                 'Email' => $email,
             ];
@@ -91,6 +123,8 @@ class MailjetEmailMessage
             'Messages' => [
                 [
                     'To' => $this->to,
+                    'Cc' => $this->cc,
+                    'Bcc' => $this->bcc,
                     'From' => $this->from,
                     'TemplateID' => $this->templateId,
                     'TemplateLanguage' => $this->templateLanguage,

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace YieldStudio\LaravelMailjetNotifier;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\AnonymousNotifiable;
 use Illuminate\Notifications\Notification;
 
 final class MailjetSmsChannel
@@ -24,12 +25,9 @@ final class MailjetSmsChannel
     }
 
     /**
-     * @param Model $notifiable
-     * @param Notification $notification
-     *
      * @throws MailjetException
      */
-    public function send(Model $notifiable, Notification $notification): void
+    public function send(Model|AnonymousNotifiable $notifiable, Notification $notification): void
     {
         $message = $notification->toMailjetSms($notifiable); // @phpstan-ignore-line
 

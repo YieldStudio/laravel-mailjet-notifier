@@ -4,6 +4,18 @@ All notable changes to `laravel-mailjet-notifier` will be documented in this fil
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+## 0.0.5 - 2022-11-06
+
+### What's Changed
+
+- add Anonymous notifiable to Channels by @dtangdev in https://github.com/YieldStudio/laravel-mailjet-notifier/pull/1
+
+### New Contributors
+
+- @dtangdev made their first contribution in https://github.com/YieldStudio/laravel-mailjet-notifier/pull/1
+
+**Full Changelog**: https://github.com/YieldStudio/laravel-mailjet-notifier/compare/0.0.4...0.0.5
+
 ## 0.0.4 - 2022-06-20
 
 **Full Changelog**: https://github.com/YieldStudio/laravel-mailjet-notifier/compare/0.0.3...0.0.4

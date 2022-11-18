@@ -8,7 +8,7 @@ Easily send Mailjet transactional email and sms with Laravel notifier.
 
 If you're just looking for a mailjet mail transport, check out [mailjet/laravel-mailjet](https://github.com/mailjet/laravel-mailjet)
 
-> L’identifiant de version majeure zéro (0.y.z) est destiné au développement initial. Tout ou partie peut être modifié à tout moment. L’API publique ne devrait pas être considérée comme stable.
+> Major version zero (0.y.z) is for initial development. Anything MAY change at any time. The public API SHOULD NOT be considered stable.
 
 ## Installation
 

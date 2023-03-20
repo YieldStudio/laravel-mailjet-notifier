@@ -26,6 +26,8 @@ class MailjetEmailMessage
 
     public array $variables = [];
 
+    public array $attachments = [];
+
     public function templateId(int $templateId): static
     {
         $this->templateId = $templateId;
@@ -117,20 +119,43 @@ class MailjetEmailMessage
         return $this;
     }
 
+    public function attachments(array $attachments): static
+    {
+        $this->attachments = $attachments;
+
+        return $this;
+    }
+
+    public function attachment(array $attachment): static
+    {
+        $this->attachments[] = $attachment;
+
+        return $this;
+    }
+
     public function toArray(): array
     {
+        $messagesData = [
+            'To' => $this->to,
+            'Cc' => $this->cc,
+            'Bcc' => $this->bcc,
+            'From' => $this->from,
+            'TemplateID' => $this->templateId,
+            'TemplateLanguage' => $this->templateLanguage,
+            'Subject' => $this->subject,
+        ];
+
+        if (filled($this->variables)) {
+            $messagesData['Variables'] = $this->variables;
+        }
+
+        if (filled($this->attachments)) {
+            $messagesData['Attachments'] = $this->attachments;
+        }
+
         return [
             'Messages' => [
-                [
-                    'To' => $this->to,
-                    'Cc' => $this->cc,
-                    'Bcc' => $this->bcc,
-                    'From' => $this->from,
-                    'TemplateID' => $this->templateId,
-                    'TemplateLanguage' => $this->templateLanguage,
-                    'Subject' => $this->subject,
-                    'Variables' => $this->variables,
-                ],
+                $messagesData,
             ],
         ];
     }

@@ -4,6 +4,14 @@ All notable changes to `laravel-mailjet-notifier` will be documented in this fil
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+## 0.0.6 - 2023-03-20
+
+### What's Changed
+
+- Add attachments and make variables optional by @dtangdev in https://github.com/YieldStudio/laravel-mailjet-notifier/pull/2
+
+**Full Changelog**: https://github.com/YieldStudio/laravel-mailjet-notifier/compare/0.0.5...0.0.6
+
 ## 0.0.5 - 2022-11-06
 
 ### What's Changed

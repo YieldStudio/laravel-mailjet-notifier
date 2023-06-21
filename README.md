@@ -3,7 +3,7 @@
 Easily send Mailjet transactional email and sms with Laravel notifier.
 
 [![Latest Version](https://img.shields.io/github/release/yieldstudio/laravel-mailjet-notifier?style=flat-square)](https://github.com/yieldstudio/laravel-mailjet-notifier/releases)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/yieldstudio/laravel-mailjet-notifier/tests?style=flat-square)](https://github.com/yieldstudio/laravel-mailjet-notifier/actions/workflows/tests.yml)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/yieldstudio/laravel-mailjet-notifier/tests.yml?branch=main)](https://github.com/yieldstudio/laravel-mailjet-notifier/actions/workflows/tests.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/yieldstudio/laravel-mailjet-notifier?style=flat-square)](https://packagist.org/packages/yieldstudio/laravel-mailjet-notifier)
 
 If you're just looking for a mailjet mail transport, check out [mailjet/laravel-mailjet](https://github.com/mailjet/laravel-mailjet)

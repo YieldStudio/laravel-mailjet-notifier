@@ -4,6 +4,18 @@ All notable changes to `laravel-mailjet-notifier` will be documented in this fil
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+## 0.0.7 - 2023-06-21
+
+### What's Changed
+
+- Laravel 10 support by @JamesHemery in https://github.com/YieldStudio/laravel-mailjet-notifier/pull/3
+
+### New Contributors
+
+- @JamesHemery made their first contribution in https://github.com/YieldStudio/laravel-mailjet-notifier/pull/3
+
+**Full Changelog**: https://github.com/YieldStudio/laravel-mailjet-notifier/compare/0.0.6...0.0.7
+
 ## 0.0.6 - 2023-03-20
 
 ### What's Changed

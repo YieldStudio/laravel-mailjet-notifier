@@ -23,14 +23,14 @@
     ],
     "require": {
         "php": "^8.0",
-        "illuminate/support": "^9",
-        "illuminate/database": "^9",
+        "illuminate/support": "^9|^10",
+        "illuminate/database": "^9|^10",
         "mailjet/mailjet-apiv3-php": "^1.5"
     },
     "require-dev": {
         "ciareis/bypass": "^1.0",
         "friendsofphp/php-cs-fixer": "^3.8",
-        "orchestra/testbench": "7.*",
+        "orchestra/testbench": "7.*|8.*",
         "pestphp/pest": "^1.21",
         "phpunit/phpunit": "^9.1"
     },

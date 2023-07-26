@@ -4,6 +4,10 @@ All notable changes to `laravel-mailjet-notifier` will be documented in this fil
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+## 0.0.8 - 2023-07-26
+
+Fix "from" in MailjetEmailMessage according to issue https://github.com/YieldStudio/laravel-mailjet-notifier/pull/4
+
 ## 0.0.7 - 2023-06-21
 
 ### What's Changed

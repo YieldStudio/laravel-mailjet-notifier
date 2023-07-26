@@ -89,7 +89,7 @@ class MailjetEmailMessage
         if (is_array($name)) {
             $this->from = $name;
         } else {
-            $this->from[] = [
+            $this->from = [
                 'Name' => $name,
                 'Email' => $email,
             ];

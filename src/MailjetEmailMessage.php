@@ -22,6 +22,8 @@ class MailjetEmailMessage
 
     public ?array $from = null;
 
+    public ?array $replyto = null;
+    
     public bool $templateLanguage = true;
 
     public array $variables = [];
@@ -98,6 +100,20 @@ class MailjetEmailMessage
         return $this;
     }
 
+    public function replyto($name, $email = null): static
+    {
+        if (is_array($name)) {
+            $this->replyto = $name;
+        } else {
+            $this->replyto = [
+                'Name' => $name,
+                'Email' => $email,
+            ];
+        }
+
+        return $this;
+    }
+
     public function templateLanguage(bool $templateLanguage): static
     {
         $this->templateLanguage = $templateLanguage;
@@ -144,6 +160,10 @@ class MailjetEmailMessage
             'TemplateLanguage' => $this->templateLanguage,
             'Subject' => $this->subject,
         ];
+
+        if (filled($this->replyto)) {
+            $messagesData['ReplyTo'] = $this->replyto;
+        }
 
         if (filled($this->variables)) {
             $messagesData['Variables'] = $this->variables;

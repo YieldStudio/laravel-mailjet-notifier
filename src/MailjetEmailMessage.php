@@ -161,7 +161,7 @@ class MailjetEmailMessage
             'Subject' => $this->subject,
         ];
 
-        if (filled($this->replyto)) {
+        if (filled($this->replyTo)) {
             $messagesData['ReplyTo'] = $this->replyTo;
         }
 

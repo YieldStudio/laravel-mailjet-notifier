@@ -23,7 +23,7 @@ class MailjetEmailMessage
     public ?array $from = null;
 
     public ?array $replyTo = null;
-    
+
     public bool $templateLanguage = true;
 
     public array $variables = [];

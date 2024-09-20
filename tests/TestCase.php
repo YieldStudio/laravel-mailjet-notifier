@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace YieldStudio\LaravelMailjetNotifier\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
@@ -7,12 +9,8 @@ use YieldStudio\LaravelMailjetNotifier\MailjetNotifierServiceProvider;
 
 abstract class TestCase extends Orchestra
 {
-    protected function getPackageProviders($app)
+    protected function getPackageProviders($app): array
     {
-        $serviceProviders = [
-            MailjetNotifierServiceProvider::class,
-        ];
-
-        return $serviceProviders;
+        return [MailjetNotifierServiceProvider::class];
     }
 }

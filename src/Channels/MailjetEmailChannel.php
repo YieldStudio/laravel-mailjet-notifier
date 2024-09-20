@@ -2,27 +2,17 @@
 
 declare(strict_types=1);
 
-namespace YieldStudio\LaravelMailjetNotifier;
+namespace YieldStudio\LaravelMailjetNotifier\Channels;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\AnonymousNotifiable;
 use Illuminate\Notifications\Notification;
+use YieldStudio\LaravelMailjetNotifier\Exceptions\MailjetException;
+use YieldStudio\LaravelMailjetNotifier\MailjetService;
 
 class MailjetEmailChannel
 {
-    protected MailjetService $mailjetService;
-
-    /**
-     * Create a new mail channel instance.
-     *
-     * @param  MailjetService  $mailjetService
-     *
-     * @return void
-     */
-    public function __construct(MailjetService $mailjetService)
-    {
-        $this->mailjetService = $mailjetService;
-    }
+    public function __construct(protected MailjetService $mailjetService) {}
 
     /**
      * @throws MailjetException

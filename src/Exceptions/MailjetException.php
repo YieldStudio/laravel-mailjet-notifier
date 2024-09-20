@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace YieldStudio\LaravelMailjetNotifier;
+namespace YieldStudio\LaravelMailjetNotifier\Exceptions;
 
 use Exception;
 use Mailjet\Response;

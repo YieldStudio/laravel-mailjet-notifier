@@ -19,20 +19,26 @@
             "email": "james@yieldstudio.fr",
             "homepage": "https://yieldstudio.fr",
             "role": "Developer"
+        },
+        {
+            "name": "Arthur Monney",
+            "email": "arthur.monney@yieldstudio.fr",
+            "homepage": "https://yieldstudio.fr",
+            "role": "Developer"
         }
     ],
     "require": {
-        "php": "^8.0",
-        "illuminate/support": "^9|^10",
-        "illuminate/database": "^9|^10",
-        "mailjet/mailjet-apiv3-php": "^1.5"
+        "php": "^8.1|^8.2",
+        "illuminate/database": "^9|^10|^11",
+        "illuminate/support": "^9|^10|^11",
+        "mailjet/mailjet-apiv3-php": "^1.6"
     },
     "require-dev": {
         "ciareis/bypass": "^1.0",
-        "friendsofphp/php-cs-fixer": "^3.8",
-        "orchestra/testbench": "7.*|8.*",
-        "pestphp/pest": "^1.21",
-        "phpunit/phpunit": "^9.1"
+        "laravel/pint": "^1.16",
+        "orchestra/testbench": "^7.44|^8.25|^9.0",
+        "pestphp/pest": "^2.34",
+        "phpunit/phpunit": "^9.5|^10.5"
     },
     "autoload": {
         "psr-4": {
@@ -45,7 +51,7 @@
         }
     },
     "scripts": {
-        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes",
+        "format": "vendor/bin/pint",
         "test": "vendor/bin/pest",
         "post-autoload-dump": [
             "@php ./vendor/bin/testbench package:discover --ansi"

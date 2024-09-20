@@ -12,7 +12,7 @@ class MailjetNotifierServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config' => config_path(),
+                __DIR__ . '/../config' => config_path(),
             ], 'config');
         }
     }
@@ -21,7 +21,7 @@ class MailjetNotifierServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/mailjet.php', 'mailjet');
 
-        $this->app->bind(MailjetService::class, function () {
+        $this->app->bind(MailjetService::class, function (): MailjetService {
             $key = config('mailjet.key', '');
             $secret = config('mailjet.secret', '');
             $smsToken = config('mailjet.smsToken');

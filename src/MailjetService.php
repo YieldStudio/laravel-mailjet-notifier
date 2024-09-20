@@ -7,6 +7,9 @@ namespace YieldStudio\LaravelMailjetNotifier;
 use Mailjet\Client;
 use Mailjet\Resources;
 use Mailjet\Response;
+use YieldStudio\LaravelMailjetNotifier\Exceptions\MailjetException;
+use YieldStudio\LaravelMailjetNotifier\Messages\MailjetEmailMessage;
+use YieldStudio\LaravelMailjetNotifier\Messages\MailjetSmsMessage;
 
 class MailjetService
 {
@@ -42,11 +45,7 @@ class MailjetService
     /**
      * Send mailjet email.
      *
-     * @param MailjetEmailMessage $message
-     * @param array $args Request arguments
-     * @param array $options
-     *
-     * @return Response|null
+     * @param  array  $args  Request arguments
      *
      * @throws MailjetException
      */
@@ -68,11 +67,7 @@ class MailjetService
     /**
      * Send mailjet SMS.
      *
-     * @param MailjetSmsMessage $message
-     * @param array $args Request arguments
-     * @param array $options
-     *
-     * @return Response
+     * @param  array  $args  Request arguments
      *
      * @throws MailjetException
      */
@@ -99,11 +94,8 @@ class MailjetService
     /**
      * Trigger a POST request.
      *
-     * @param array $resource Mailjet Resource/Action pair
-     * @param array $args Request arguments
-     * @param array $options
-     *
-     * @return Response
+     * @param  array  $resource  Mailjet Resource/Action pair
+     * @param  array  $args  Request arguments
      *
      * @throws MailjetException
      */
@@ -121,11 +113,8 @@ class MailjetService
     /**
      * Trigger a GET request.
      *
-     * @param array $resource Mailjet Resource/Action pair
-     * @param array $args Request arguments
-     * @param array $options
-     *
-     * @return Response
+     * @param  array  $resource  Mailjet Resource/Action pair
+     * @param  array  $args  Request arguments
      *
      * @throws MailjetException
      */
@@ -143,11 +132,8 @@ class MailjetService
     /**
      * Trigger a PUT request.
      *
-     * @param array $resource Mailjet Resource/Action pair
-     * @param array $args Request arguments
-     * @param array $options
-     *
-     * @return Response
+     * @param  array  $resource  Mailjet Resource/Action pair
+     * @param  array  $args  Request arguments
      *
      * @throws MailjetException
      */
@@ -165,11 +151,8 @@ class MailjetService
     /**
      * Trigger a DELETE request.
      *
-     * @param array $resource Mailjet Resource/Action pair
-     * @param array $args Request arguments
-     * @param array $options
-     *
-     * @return Response
+     * @param  array  $resource  Mailjet Resource/Action pair
+     * @param  array  $args  Request arguments
      *
      * @throws MailjetException
      */

@@ -49,8 +49,7 @@ php artisan vendor:publish --provider="YieldStudio\LaravelMailjetNotifier\Mailje
 
 namespace App\Notifications;
 
-use Illuminate\Notifications\Notification;
-use YieldStudio\LaravelMailjetNotifier\MailjetEmailChannel;
+use Illuminate\Notifications\Notification;use YieldStudio\LaravelMailjetNotifier\Channels\MailjetEmailChannel;
 
 class OrderConfirmation extends Notification
 {
@@ -77,9 +76,7 @@ class OrderConfirmation extends Notification
 
 namespace App\Notifications;
 
-use Illuminate\Notifications\Notification
-;use YieldStudio\LaravelMailjetNotifier\MailjetSmsChannel;
-use YieldStudio\LaravelMailjetNotifier\MailjetSmsMessage;
+use Illuminate\Notifications\Notification;use YieldStudio\LaravelMailjetNotifier\Channels\MailjetSmsChannel;use YieldStudio\LaravelMailjetNotifier\Messages\MailjetSmsMessage;
 
 class ResetPassword extends Notification
 {

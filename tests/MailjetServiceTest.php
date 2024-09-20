@@ -1,15 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 use Ciareis\Bypass\Bypass;
 use Ciareis\Bypass\Route;
-use YieldStudio\LaravelMailjetNotifier\MailjetEmailMessage;
-use YieldStudio\LaravelMailjetNotifier\MailjetException;
-use YieldStudio\LaravelMailjetNotifier\MailjetService;
 use Mailjet\Response;
-use YieldStudio\LaravelMailjetNotifier\MailjetSmsMessage;
-use function PHPUnit\Framework\assertInstanceOf;
+use YieldStudio\LaravelMailjetNotifier\Exceptions\MailjetException;
+use YieldStudio\LaravelMailjetNotifier\MailjetService;
+use YieldStudio\LaravelMailjetNotifier\Messages\MailjetEmailMessage;
+use YieldStudio\LaravelMailjetNotifier\Messages\MailjetSmsMessage;
 
-it('returns a Response instance when the email is sent correctly', function () {
+it('returns a Response instance when the email is sent correctly', function (): void {
     $bypass = Bypass::serve(
         Route::post('/v3/send', ['success' => true]),
     );
@@ -23,14 +24,14 @@ it('returns a Response instance when the email is sent correctly', function () {
         'url' => str_replace('http://', '', $bypass->getBaseUrl()),
     ]);
 
-    $message = (new MailjetEmailMessage())->templateId(1);
+    $message = (new MailjetEmailMessage)->templateId(1);
     $result = $mailjetService->sendEmail($message);
 
     $bypass->assertRoutes();
-    assertInstanceOf(Response::class, $result);
+    expect($result)->toBeInstanceOf(Response::class);
 });
 
-it('returns a MailjetException when sending email fails', function () {
+it('returns a MailjetException when sending email fails', function (): void {
     $bypass = Bypass::serve(
         Route::post('/v3/send', ['success' => false], 400),
     );
@@ -44,12 +45,12 @@ it('returns a MailjetException when sending email fails', function () {
         'url' => str_replace('http://', '', $bypass->getBaseUrl()),
     ]);
 
-    $message = (new MailjetEmailMessage())->templateId(1);
+    $message = (new MailjetEmailMessage)->templateId(1);
 
     $mailjetService->sendEmail($message);
 })->throws(MailjetException::class);
 
-it('returns a Response instance when the sms is sent correctly', function () {
+it('returns a Response instance when the sms is sent correctly', function (): void {
     $bypass = Bypass::serve(
         Route::post('/v4/sms-send', ['success' => true]),
     );
@@ -62,14 +63,14 @@ it('returns a Response instance when the sms is sent correctly', function () {
 
     $mailjetService->setSmsToken('testing');
 
-    $message = (new MailjetSmsMessage())->to('0601020304')->text('Hello');
+    $message = (new MailjetSmsMessage)->to('0601020304')->text('Hello');
     $result = $mailjetService->sendSms($message);
 
     $bypass->assertRoutes();
-    assertInstanceOf(Response::class, $result);
+    expect($result)->toBeInstanceOf(Response::class);
 });
 
-it('returns a MailjetException when sending sms fails', function () {
+it('returns a MailjetException when sending sms fails', function (): void {
     $bypass = Bypass::serve(
         Route::post('/v4/sms-send', ['success' => false], 400),
     );
@@ -82,6 +83,6 @@ it('returns a MailjetException when sending sms fails', function () {
 
     $mailjetService->setSmsToken('testing');
 
-    $message = (new MailjetSmsMessage())->to('0601020304')->text('Hello');
+    $message = (new MailjetSmsMessage)->to('0601020304')->text('Hello');
     $mailjetService->sendSms($message);
 })->throws(MailjetException::class);

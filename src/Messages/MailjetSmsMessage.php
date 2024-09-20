@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace YieldStudio\LaravelMailjetNotifier;
+namespace YieldStudio\LaravelMailjetNotifier\Messages;
 
 use Illuminate\Support\Traits\Conditionable;
 

@@ -4,6 +4,19 @@ All notable changes to `laravel-mailjet-notifier` will be documented in this fil
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+## 0.0.10 - 2025-09-11
+
+### What's Changed
+
+* Add sandbox mode (and Laravel 11 support) by @SkyspotEmil in https://github.com/YieldStudio/laravel-mailjet-notifier/pull/10
+* chore: update actions checkout to v5 by @dtangdev in https://github.com/YieldStudio/laravel-mailjet-notifier/pull/11
+
+### New Contributors
+
+* @SkyspotEmil made their first contribution in https://github.com/YieldStudio/laravel-mailjet-notifier/pull/10
+
+**Full Changelog**: https://github.com/YieldStudio/laravel-mailjet-notifier/compare/0.0.9...0.0.10
+
 ## 0.0.9 - 2023-09-07
 
 Add replyTo

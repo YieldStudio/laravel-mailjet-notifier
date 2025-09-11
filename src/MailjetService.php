@@ -85,7 +85,7 @@ class MailjetService
             $message->from($this->smsFrom);
         }
 
-        $client = new Client($this->smsToken, null, true, $options); // @phpstan-ignore-line
+        $client = new Client($this->smsToken, ' ', true, $options); // @phpstan-ignore-line
 
         $response = $client->post(Resources::$SmsSend, array_merge_recursive(['body' => $message->toArray()], $args), $options);
 

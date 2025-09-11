@@ -23,8 +23,8 @@
     ],
     "require": {
         "php": "^8.0",
-        "illuminate/support": "^9|^10",
-        "illuminate/database": "^9|^10",
+        "illuminate/support": "^9|^10|^11|^12",
+        "illuminate/database": "^9|^10|^11|^12",
         "mailjet/mailjet-apiv3-php": "^1.5"
     },
     "require-dev": {

@@ -30,6 +30,13 @@ class MailjetEmailMessage
 
     public array $attachments = [];
 
+    public bool $sandboxMode = false;
+
+    public function __construct()
+    {
+        $this->sandboxMode = (bool) config('mailjet.sandbox', false);
+    }
+
     public function templateId(int $templateId): static
     {
         $this->templateId = $templateId;
@@ -177,6 +184,7 @@ class MailjetEmailMessage
             'Messages' => [
                 $messagesData,
             ],
+            'SandboxMode' => $this->sandboxMode,
         ];
     }
 }

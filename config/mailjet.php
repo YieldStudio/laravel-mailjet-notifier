@@ -10,6 +10,7 @@ return [
     ],
     'smsFrom' => env('MAILJET_SMS_SENDER'),
     'dry' => (bool) env('MAILJET_DRY', false),
+    'sandbox' => (bool) env('MAILJET_SANDBOX', false),
     'options' => [
         'version' => 'v3.1',
     ],

@@ -26,6 +26,7 @@ MAIL_FROM_ADDRESS=
 MAIL_FROM_NAME=
 MAILJET_SMS_SENDER=
 MAILJET_DRY=true|false
+MAILJET_SANDBOX=true|false
 ```
 
 Make sure that MAIL_FROM_ADDRESS is an authenticated email on Mailjet, otherwise your emails will not be sent by the Mailjet API.
@@ -33,6 +34,8 @@ Make sure that MAIL_FROM_ADDRESS is an authenticated email on Mailjet, otherwise
 MAILJET_SMS_SENDER should be between 3 and 11 characters in length, only alphanumeric characters are allowed.
 
 When the dry mode is enabled, Mailjet API isn't called.
+
+When the sandbox mode is enabled, Mailjet API is called but the mail is not send by Mailjet (requires Send API v3.1).
 
 You can publish the configuration file with:
 
